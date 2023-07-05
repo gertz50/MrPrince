@@ -51,17 +51,18 @@
     }
   </style>
   <script>
-    function playSound() {
-      var audio = new Audio('sounds/roundstart.mp3');
-      audio.play();
+    var clicked = false;
+    function evilMoment() {
+      if (!clicked) {
+        document.body.style.backgroundImage = "url('pics/hintergrund2.gif')";
+        var audio = new Audio('sounds/roundstart.mp3');
+        audio.play();
+        clicked = true;
+      }
     }
-    
-    window.addEventListener('DOMContentLoaded', function() {
-        playSound();
-    });
   </script>
 </head>
-<body>
+<body onclick="evilMoment()">
   <div class="container">
     <div class="content">
       <h1 class="title">Dies ist eine böse Webseite, du hättest nicht herkommen sollen...</h1>
