@@ -1,75 +1,17 @@
 <!DOCTYPE html>
 <html lang="de">
-<meta charset="utf-8">
 <head>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url('pics/hintergrund1.gif');
-      background-repeat: repeat;
-      background-size: auto;
-    }
-    
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    }
-    
-    .content {
-      text-align: center;
-    }
-    
-    .title {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    
-    .description {
-      font-size: 24px;
-    }
-
-    .description:hover {
-        cursor: pointer;
-        text-decoration: underline;
-        font-style: italic;
-    }
-    
-    .button {
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #ffffff;
-      color: #000000;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
-  <script>
-    var clicked = false;
-    function evilMoment(event) {
-      if (!clicked) {
-        document.body.style.backgroundImage = "url('pics/hintergrund2.gif')";
-        var audio = new Audio('sounds/roundstart.mp3');
-        audio.play();
-        clicked = true;
-      }
-      event.stopPropagation();
-    }
-  </script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body onclick="evilMoment()">
+<body>
   <div class="container">
     <div class="content">
       <h1 class="title">Dies ist eine böse Webseite, du hättest nicht herkommen sollen...</h1>
-      <p class="description" onclick="event.stopPropagation(); window.location.href='https://yungztr.de'"><u><i>Klick mich an und kehre sofort um zu einer besseren und sicheren Webseite!</i></u></p>
-      <button class="button" onclick="event.stopPropagation(); window.location.href = 'ww.html';">Walter White Andenken: Klick jetzt!</button>
+      <p class="description" id="redirect-link"><u><i>Klick mich an und kehre sofort um zu einer besseren und sicheren Webseite!</i></u></p>
+      <button class="button">Walter White Andenken: Klick jetzt!</button>
     </div>
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
