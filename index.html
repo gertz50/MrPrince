@@ -50,6 +50,19 @@
       cursor: pointer;
     }
   </style>
+  <script>
+    function playSound() {
+      var audio = new Audio('sounds/roundstart.mp3');
+      audio.play();
+    }
+    
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!sessionStorage.getItem('soundPlayed')) {
+        playSound();
+        sessionStorage.setItem('soundPlayed', 'true');
+      }
+    });
+  </script>
 </head>
 <body>
   <div class="container">
