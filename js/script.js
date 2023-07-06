@@ -20,6 +20,15 @@ function loveMoment(event) {
   event.stopPropagation();
 }
 
+function randomMoment(event) {
+  var random = Math.random();
+  if (random < 0.5) {
+    evilMoment(event);
+  } else {
+    loveMoment(event);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   var redirectLink = document.getElementById('redirect-link');
   redirectLink.addEventListener('click', function(event) {
@@ -33,6 +42,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = 'ww.html';
   });
 
-  document.body.addEventListener('click', evilMoment);
-  document.body.addEventListener('click', loveMoment);
+  document.body.addEventListener('click', randomMoment);
 });
