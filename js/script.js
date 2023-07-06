@@ -53,6 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = 'ww.html';
   });
 
+
+//Text dunkler Hintergrund
+  var title = document.getElementById('title-text');
+  var description = document.getElementById('redirect-link');
+  title.classList.add('dark-background');
+  description.classList.add('dark-background');
+    
   if (moment === "evil") {
     document.body.addEventListener('click', evilMoment);
   }
