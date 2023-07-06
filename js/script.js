@@ -1,4 +1,13 @@
 var clicked = false;
+var moment = randomMoment();
+
+if (moment.equals("evil")) {
+    document.getElementById('title-text').innerText = "Dies ist eine böse Webseite, du hättest nicht herkommen sollen...";
+}
+
+if (moment.equals("love")) {
+    document.getElementById('title-text').innerText = "Dies ist eine Prüfung der Liebe...";
+}
 
 function evilMoment(event) {
   if (!clicked) {
@@ -20,12 +29,14 @@ function loveMoment(event) {
   event.stopPropagation();
 }
 
-function randomMoment(event) {
+function randomMoment() {
   var random = Math.random();
   if (random < 0.5) {
-    evilMoment(event);
+    //evilMoment(event);
+    return("evil");
   } else {
-    loveMoment(event);
+    //loveMoment(event);
+    return("love");
   }
 }
 
@@ -42,5 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = 'ww.html';
   });
 
-  document.body.addEventListener('click', randomMoment);
+  if (moment.equals("evil")) {
+    document.body.addEventListener('click', evilMoment);
+  }
+
+  if (moment.equals("love")) {
+    document.body.addEventListener('click', loveMoment);
+  }
+    
+  
 });
