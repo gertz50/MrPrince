@@ -23,8 +23,8 @@ function evilMoment(event) {
 function loveMoment(event) {
   if (!clicked) {
     document.body.style.backgroundImage = "url('pics/hintergrund3.gif')";
-    //var audio = new Audio('sounds/roundstart.mp3');
-    //audio.play();
+    var audio = new Audio('sounds/sanji.mp3');
+    audio.play();
     clicked = true;
   }
   event.stopPropagation();
