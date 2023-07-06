@@ -1,5 +1,6 @@
 var clicked = false;
 var moment = randomMoment();
+updateIcon(moment);
 
 if (moment === "evil") {
     document.getElementById('title-text').innerText = "Dies ist eine böse Webseite, du hättest nicht herkommen sollen...";
@@ -38,6 +39,21 @@ function randomMoment() {
     //loveMoment(event);
     return("love");
   }
+}
+
+function updateIcon(moment) {
+      const favicon = document.getElementById('favicon');
+      const faviconSmall = document.getElementById('favicon-small');
+
+      if (moment === 'love') {
+        favicon.href = 'pics/love-Icon32.png';
+        faviconSmall.href = 'pics/love-Icon16.png';
+      } 
+    
+    if (moment === 'evil') {
+        favicon.href = 'pic/evil-Icon32.png';
+        faviconSmall.href = 'pics/evil-Icon16.png';
+      }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
