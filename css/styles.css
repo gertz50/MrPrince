@@ -44,4 +44,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
   }
+
+.dark-background {
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  padding: 10px;
+}
   
