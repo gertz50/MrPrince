@@ -2,9 +2,19 @@ var clicked = false;
 
 function evilMoment(event) {
   if (!clicked) {
-    document.body.style.backgroundImage = "url('pics/hintergrund3.gif')";
+    document.body.style.backgroundImage = "url('pics/hintergrund2.gif')";
     var audio = new Audio('sounds/roundstart.mp3');
     audio.play();
+    clicked = true;
+  }
+  event.stopPropagation();
+}
+
+function loveMoment(event) {
+  if (!clicked) {
+    document.body.style.backgroundImage = "url('pics/hintergrund3.gif')";
+    //var audio = new Audio('sounds/roundstart.mp3');
+    //audio.play();
     clicked = true;
   }
   event.stopPropagation();
@@ -24,4 +34,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.body.addEventListener('click', evilMoment);
+  document.body.addEventListener('click', loveMoment);
 });
