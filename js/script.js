@@ -6,7 +6,7 @@ if (moment === "evil") {
 }
 
 if (moment === "love") {
-    document.getElementById('title-text').innerText = "Dies ist eine Prüfung der Liebe...";
+    document.getElementById('title-text').innerText = "Dies ist die Prüfung der Liebe...";
 }
 
 function evilMoment(event) {
