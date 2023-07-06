@@ -1,11 +1,11 @@
 var clicked = false;
 var moment = randomMoment();
 
-if (moment.equals("evil")) {
+if (moment === "evil") {
     document.getElementById('title-text').innerText = "Dies ist eine böse Webseite, du hättest nicht herkommen sollen...";
 }
 
-if (moment.equals("love")) {
+if (moment === "love") {
     document.getElementById('title-text').innerText = "Dies ist eine Prüfung der Liebe...";
 }
 
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = 'ww.html';
   });
 
-  if (moment.equals("evil")) {
+  if (moment === "evil") {
     document.body.addEventListener('click', evilMoment);
   }
 
-  if (moment.equals("love")) {
+  if (moment === "love") {
     document.body.addEventListener('click', loveMoment);
   }
     
