@@ -2,7 +2,7 @@ var clicked = false;
 
 function evilMoment(event) {
   if (!clicked) {
-    document.body.style.backgroundImage = "url('pics/hintergrund2.gif')";
+    document.body.style.backgroundImage = "url('pics/hintergrund3.gif')";
     var audio = new Audio('sounds/roundstart.mp3');
     audio.play();
     clicked = true;
