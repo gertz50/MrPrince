@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "dein_db_benutzername";
-$password = "dein_db_passwort";
+$username = "greenfir";
+$password = "u2pTrquvqHvWriDdoatU";
 $dbname = "MrPrinceDB";
 
 // Verbindung herstellen
