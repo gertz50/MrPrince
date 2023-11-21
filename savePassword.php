@@ -18,6 +18,9 @@ $currentPassword = $_POST['currentPassword'];
 $newPassword = $_POST['newPassword'];
 $confirmPassword = $_POST['confirmPassword'];
 
+// Deutsche Zeitzone setzen
+date_default_timezone_set('Europe/Berlin');
+
 // Aktuelle Zeit erhalten
 $datetime = date('Y-m-d H:i:s');
 
