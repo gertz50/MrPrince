@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var redirectLink = document.getElementById('redirect-link');
   redirectLink.addEventListener('click', function(event) {
     event.stopPropagation();
-    window.location.href = 'https://yungztr.de';
+    window.location.href = 'https://snake.rambonl.com/';
   });
 
   var button = document.querySelector('.button');
