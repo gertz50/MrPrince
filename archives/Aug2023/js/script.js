@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var button = document.querySelector('.button');
   button.addEventListener('click', function(event) {
     event.stopPropagation();
-    window.location.href = 'ww';
+    window.location.href = 'ww.html';
   });
 
   var title = document.getElementById('title-text');
