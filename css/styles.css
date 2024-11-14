@@ -384,7 +384,7 @@ ul#topnav li a:hover {
 	display: block;
 }
 
-@media screen and (max-width: 1563px) {
+@media screen and (max-width: 1294px) {
 
 	/* Verkleinert alle Textelemente im Banner */
 	#banner h1, 
@@ -423,7 +423,7 @@ ul#topnav li a:hover {
 	ul#topnav li a { border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; font-size:9px;}
 }
 
-@media screen and (max-width: 1121px) {
+@media screen and (max-width: 965px) {
 	/* text wechslen */
 	.banner-text-mobile {
         display: block;
