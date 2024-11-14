@@ -6,6 +6,7 @@ function checkAnswer(answerId, contentId, riddleNr, errorId) {
 
     if (riddleNr == 1) {
         correctAnswer = process.env.RIDDLEANSWER1;
+        console.log(process.env.RIDDLEANSWER1);
     }
 
     if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
