@@ -1,7 +1,12 @@
 // Funktion, um die Antwort zu überprüfen
-function checkAnswer(answerId, contentId, correctAnswer, errorId) {
+function checkAnswer(answerId, contentId, riddleNr, errorId) {
     const userAnswer = document.getElementById(answerId).value.trim();
     const errorMessage = document.getElementById(errorId);
+    const correctAnswer = "";
+
+    if (riddleNr == 1) {
+        correctAnswer = process.env.RIDDLEANSWER1;
+    }
 
     if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
         // Zeige den Inhalt an
