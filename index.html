@@ -8,7 +8,9 @@
 		<meta name="Description" lang="en" content="greenfirely Webpage">
 		<meta name="author" content="Mr. Prince">
 		<meta name="robots" content="index, follow">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<!-- Link zur externen JavaScript-Datei -->
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<!--start wrapper-->
@@ -100,25 +102,101 @@
 				<div id="content">
 					<!--post item-->
 					<div class="item">
-						<h1>Strangers of the Internet</h1>
-						<!-- Rätsel und Eingabefeld -->
-						<div class="riddle-container">
-							<p id="riddle">Was ist schwer wie ein Berg, aber leicht wie eine Feder?</p>
-							<input type="text" id="answer" placeholder="Antwort eingeben">
-							<button onclick="checkAnswer()">Antwort überprüfen</button>
+						<h1>Strangers of the Internet: Friendships and Risks in the Digital Age</h1>
+						<!-- start Rätsel 1-->
+						<div>
+							<p>
+								<i>🔒Attention!🔒</i><br> 
+								The following post on the topic "Strangers of the Internet" is locked because it contains private and 
+								sensitive personal information<br>
+								that should not be visible to everyone.<br>
+								If you are a close friend of the owner of this page, you can unlock this post by correctly answering
+								the following riddle:<br><br>
+							</p>
+							<p>
+								<b>
+									The person is Black, has known the owner since November 2016, and their last name rhymes with "Vanilla-Riegel".<br>
+									What is this person’s first name?
+								</b>
+							</p>
+							<p id="error1" style="color: red; display: none;">Wrong answer</p>
+							<input type="text" id="answer1" placeholder="Your answer">
+							<button onclick="checkAnswer('answer1', 'content1', JSON.stringify(process.env.RIDDLEANSWER1), 'error1')">Antwort überprüfen</button>
 						</div>
 				
-						<!-- Verborgener Inhalt -->
-						<div class="hidden-content" id="content">
+						<div style="display: none;" id="content1">
 							<p>
-								Ich freue mich, die Alpha 1.0 Version von Mr-Prince.com jetzt live und für alle zugänglich zu machen.<br>
-								Diese frühe Version ist ein erster Schritt, und ich lade euch ein, sie zu erkunden, zu testen und Feedback zu teilen.<br><br>
-								Die Alpha-Phase ist eine Gelegenheit, zu verstehen, was funktioniert und was nicht, und die Website mit eurem Input zu verbessern.<br>
-								Falls ihr Fragen habt oder euch melden wollt, könnt ihr mich auf X kontaktieren (<a href="https://x.com/MrPrinceYL" target="_blank">@MrPrinceYL</a>) oder per E-Mail unter <a href="mailto:youssef68@web.de">youssef68@web.de</a>.<br><br>
-								Vielen Dank, dass ihr Teil dieser frühen Phase seid.
+								In today’s digital age, meeting new people online has become a normal part of our daily lives.<br> 
+								Social media platforms, forums, and other online communities offer endless opportunities to connect<br>  
+								with people who share our interests and values, regardless of where they live. However,<br>  
+								meeting strangers on the internet is not without its risks, and caution is essential,<br>  
+								especially when transitioning from an online interaction to an in-person meeting.<br><br> 
+
+								The darker side of meeting strangers online is well-documented. From catfishing to scams,<br>  
+								there are many risks involved in trusting someone you’ve only met virtually. Stories of fraud, harassment,<br>  
+								or even dangerous situations arising from online encounters are enough to make anyone wary.<br>  
+								In worst-case scenarios, meeting an internet stranger can lead to harm, with cases of stalking, violence,<br>  
+								or exploitation highlighting the potential consequences.<br>  
+								This is why many experts advise taking certain precautions, like meeting in public places,<br>  
+								informing someone you trust, and doing a little research before agreeing to an in-person meeting.<br><br> 
+
+								Despite these risks, not all internet encounters lead to trouble—many end up being the start of amazing,<br>  
+								long-lasting friendships. In fact, one of my own experiences speaks to the positive side of meeting people online.<br>  
+								Back in 2016, I reached out to a fellow Twitter user named Jason, or <a href="https://x.com/SonJasoon" target="_blank">@SonJasoon</a>,<br>  
+								asking where I could watch the latest Dragon Ball Super livestream.<br>  
+								That simple question turned into regular chats and an evolving online friendship.<br>  
+								Finally, in October 2019, we decided to meet in person. To my surprise, we connected right away,<br>  
+								like we had known each other forever, and a real bond began to grow.<br><br>
+
+								<a href="pics/riddle1/dbs2016.jpg" target="_blank">
+									<img style="max-height: 400px;" src="pics/riddle1/dbs2016.jpg"></img> 
+								</a>
+								<a href="pics/riddle1/jason2019.jpg" target="_blank">
+									<img style="max-height: 400px;" src="pics/riddle1/jason2019.jpg"></img> 
+								</a><br><br> 
+								
+								One fun tradition came out of that first meeting: every time we meet for the first time after a while,<br>  
+								we bring a Kinder Maxi King and a purple Red Bull to share. Our paths split briefly after October 20, 2019,<br>  
+								but we met again in June 2020, where we shot a hilarious video of Jason laughing uncontrollably,<br>
+								almost like a kettle boiling over, completely out of breath.<br><br>
+
+								<a href="pics/riddle1/byejason2019.jpg" target="_blank">
+									<img style="max-height: 400px;" src="pics/riddle1/byejason2019.jpg"></img> 
+								</a>
+								<video height="400" controls>
+									<source src="pics/riddle1/jasonlache.mp4" type="video/mp4">
+								</video><br><br> 
+
+								In January 2022, the tables turned. This time, instead of Jason visiting us,<br>  
+								our whole friend group traveled to see him!<br>  
+								The excitement was unreal—I couldn’t stop laughing the entire night,<br>  
+								and poor Alperen was my target that night, even though he hadn’t said a word.<br>  
+								It was a mix of reactions; some found it funny, and others were understandably a bit annoyed!<br>  
+								We shared so many ridiculous moments on that trip, including one memorable night sharing a double bed.<br>  
+								I barely made it through due to Jason’s intense snoring,<br>  
+								ultimately giving up and finding a quieter place to sleep (shoutout to Simon for handling it like a champ).<br><br> 
+
+								Looking back, that journey stands out as one of the most memorable experiences of my life,<br>  
+								filled with laughter and moments of pure fun. The last time we met was this June, and although it was brief,<br>  
+								it was my turn to bring the Red Bull and Maxi King. Once again, it was a joy to see him.<br><br>  
+
+								Through Jason, I also had the privilege of meeting Simon <a href="https://x.com/HerrPopc0rn" target="_blank">(@HerrPopc0rn)</a>, undoubtedly one of the kindest, most genuine people<br>  
+								I’ve ever known.<br><br>
+
+								<a href="pics/riddle1/simon.jpg" target="_blank">
+									<img style="max-height: 400px;" src="pics/riddle1/simon.jpg"></img> 
+								</a>
+								<a href="pics/riddle1/simonGroup.jpg" target="_blank">
+									<img style="max-height: 400px;" src="pics/riddle1/simonGroup.jpg"></img> 
+								</a><br><br> 
+
+								Ultimately, while caution is wise, my story is a reminder that not all internet strangers are dangerous.<br>  
+								Sometimes, they become lifelong friends who bring unforgettable experiences, funny traditions,<br>  
+								and meaningful bonds into our lives.
 							</p>
 						</div>
-						<span>13 November 2024 @ 16:41 | Posted by <a href="https://x.com/MrPrinceYL">MrPrinceYL</a></span>
+						<!-- end of Rätsel 1-->
+						<span>14 November 2024 @ 01:33 | Posted by <a href="https://x.com/MrPrinceYL">MrPrinceYL</a></span>
 					</div>
 					<br>
 					<!--end of post item-->	
