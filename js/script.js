@@ -19,11 +19,21 @@ function checkAnswer(answerId, contentId, correctAnswer, errorId) {
 // Ereignislistener für Enter-Taste hinzufügen
 function addEnterKeyListener(answerId, contentId, correctAnswer, errorId) {
     const answerInput = document.getElementById(answerId);
-    answerInput.addEventListener('keypress', function(event) {
+
+    if (answerInput) {
+        answerInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkAnswer(answerId, contentId, correctAnswer, errorId);
+            }
+        });
+    }
+
+    answerInput?.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             checkAnswer(answerId, contentId, correctAnswer, errorId);
         }
     });
+    
 }
 
 // Listener beim Laden der Seite für jedes Rätsel hinzufügen
