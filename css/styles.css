@@ -225,6 +225,14 @@ ul#topnav li a:hover {
 	text-indent: -1em;
 }
 
+#sidebar ul li:hover {
+	background-color: #B59410;
+	color: #fff;
+	padding: 0px 2px;
+	/* display: block; */
+	/* text-decoration: none; */
+}
+
 #sidebar ul li a {
 	background-color: inherit;
 	color: #333;
