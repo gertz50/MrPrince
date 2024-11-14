@@ -1,0 +1,21 @@
+{
+	"siteId": "968c0d57-6750-4fcb-8522-4c9fd4255d6e",
+	"geolocation": {
+		"data": {
+			"city": "Dinslaken",
+			"country": {
+				"code": "DE",
+				"name": "Germany"
+			},
+			"subdivision": {
+				"code": "NW",
+				"name": "North Rhine-Westphalia"
+			},
+			"timezone": "Europe/Berlin",
+			"latitude": 51.5654,
+			"longitude": 6.7635,
+			"postalCode": "46539"
+		},
+		"timestamp": 1731598271828
+	}
+}
