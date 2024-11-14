@@ -23,17 +23,16 @@ function checkAnswer(answerId, contentId, riddleNr, errorId) {
 }
 
 // Ereignislistener für Enter-Taste hinzufügen
-function addEnterKeyListener(answerId, contentId, correctAnswer, errorId) {
+function addEnterKeyListener(answerId, contentId, riddleNr, errorId) {
     const answerInput = document.getElementById(answerId);
     answerInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            checkAnswer(answerId, contentId, correctAnswer, errorId);
+            checkAnswer(answerId, contentId, riddleNr, errorId);
         }
     });
 }
 
 // Listener beim Laden der Seite für jedes Rätsel hinzufügen
 document.addEventListener('DOMContentLoaded', function() {
-    addEnterKeyListener('answer1', 'content1', 'Gedanken', 'error1');
-    addEnterKeyListener('answer2', 'content2', 'Zeit', 'error2');
+    addEnterKeyListener('answer1', 'content1', 1, 'error1');
 });
